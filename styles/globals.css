@@ -1,3 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "ogg";
+  src: url("../public/fonts/ogg/ogg-roman.otf");
+}
+@font-face {
+  font-family: "apercu";
+  src: url("../public/fonts/apercu/ApercuMonoProLight.ttf");
+}
+
 html,
 body {
   padding: 0;
