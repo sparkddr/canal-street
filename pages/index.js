@@ -7,6 +7,8 @@ import background from "../public/assets/background.avif";
 import picture1 from "../public/assets/section1-1.jpeg";
 import picture2 from "../public/assets/section1-2.jpeg";
 import picture3 from "../public/assets/section1-3.jpeg";
+import mapPic from "../public/assets/map.avif";
+import Footer from "../components/Footer/Footer";
 
 export default function Home() {
   return (
@@ -18,9 +20,9 @@ export default function Home() {
       </Head>
       <div className="flex">
         <main>
-          <div className="pt-10 px-16 fixed">
+          <Link href="/" className="block pt-10 px-16 fixed">
             <Logo />
-          </div>
+          </Link>
           <section className="mx-16 py-36 max-w-[1030px]">
             <h1 className="text-4xl md:text-7xl font-ogg md:leading-[5.5rem]">
               Canal Street Market is a carefully curated retail market, food
@@ -72,7 +74,7 @@ export default function Home() {
                 <span className={styles.asianSigns}>活動</span>
               </div>
               <div className="flex justify-center md:col-span-2 ">
-                <h2 className="text-5xl text-center  md:text-8xl xl:text-9xl font-ogg md:leading-[5.5rem] ">
+                <h2 className="text-7xl text-center  md:text-8xl xl:text-9xl font-ogg md:leading-[5.5rem] ">
                   Market Events
                 </h2>
               </div>
@@ -89,13 +91,13 @@ export default function Home() {
               }
             >
               <div
-                className={styles.borderScore + " text-xs text-center py-8 "}
+                className={styles.borderScore + " text-xs text-center py-12 "}
               >
                 <h3 className="text-center">10/22</h3>
                 <span>Small Business Retail Pop Up Weekend!</span>
               </div>
               <div
-                className={styles.borderScore + " text-xs text-center py-8 "}
+                className={styles.borderScore + " text-xs text-center py-12 "}
               >
                 <h3 className="text-center">02/07</h3>
                 <span>
@@ -104,19 +106,42 @@ export default function Home() {
                 </span>
               </div>
               <div
-                className={styles.borderScore + " text-xs text-center py-8 "}
+                className={styles.borderScore + " text-xs text-center py-12 "}
               >
                 <h3 className="text-center">12/11</h3>
                 <span>Hack City </span>
               </div>
             </div>
-            <div className="w-full md:flex justify-center -mt-[86px]">
+            <div className="w-full md:flex justify-center md:-mt-[86px]">
               <button className="font-apercu border md:mx-auto bg-white  border-black w-full mt-12 py-4 text-sm md:text-base md:w-auto px-20 hover:text-white hover:bg-black transition-all duration-300">
                 see all
               </button>
             </div>
           </section>
+          <section className="px-16 lg:grid grid-cols-2 gap-6 mt-10">
+            <Link
+              href="https://www.google.com/maps/place/265+Canal+St,+New+York,+NY+10013/@40.7190077,-74.0030314,17z/data=!3m1!4b1!4m5!3m4!1s0x89c2598a1c3945dd:0x6b44c616961ec727!8m2!3d40.7190077!4d-74.0008427"
+              className={
+                styles.borderDotted +
+                " flex justify-center items-center py-20 px-16   w-full"
+              }
+            >
+              <h2 className="text-4xl lg:text-5xl xl:text-6xl text-center  font-ogg ">
+                265 Canal St. New York, NY
+              </h2>
+            </Link>
+            <Link
+              href="https://www.google.com/maps/place/265+Canal+St,+New+York,+NY+10013/@40.7190077,-74.0030314,17z/data=!3m1!4b1!4m5!3m4!1s0x89c2598a1c3945dd:0x6b44c616961ec727!8m2!3d40.7190077!4d-74.0008427"
+              className={
+                styles.borderDotted + " hidden  lg:block w-full p-[0.8px] "
+              }
+            >
+              <Image src={mapPic} className="w-full h-full object-cover" />
+            </Link>
+          </section>
+          <Footer />
         </main>
+
         <div className="hidden md:block w-[180px] shrink-0"></div>
       </div>
     </div>
