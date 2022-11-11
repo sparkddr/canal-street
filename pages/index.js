@@ -142,7 +142,26 @@ export default function Home() {
           <Footer />
         </main>
 
-        <div className="hidden md:block w-[180px] shrink-0"></div>
+        <nav className="hidden md:flex w-[180px] shrink-0 relative font-apercu ">
+          <div className="h-[100vh] w-[60px] relative ">
+            <div className="h-[100vh] w-[60px] bg-[#5EA2EC] fixed flex flex-col justify-center items-center cursor-pointer ">
+              <span className="text-xl absolute top-20">餐饮</span>
+              <h3 className="rotate-90 text-xl">Food</h3>
+            </div>
+          </div>
+          <div className="h-[100vh] w-[60px] relative ">
+            <div className="h-[100vh] w-[60px] bg-[#F64444] fixed flex flex-col justify-center items-center cursor-pointer">
+              <span className="text-xl absolute top-20">餐饮</span>
+              <h3 className="rotate-90 text-xl">Retail</h3>
+            </div>
+          </div>
+          <div className="h-[100vh] w-[60px] relative ">
+            <div className="h-[100vh] w-[60px] bg-[#FFB300] fixed flex flex-col justify-center items-center cursor-pointer">
+              <span className="text-xl absolute top-20">餐饮</span>
+              <h3 className="rotate-90 text-xl">Community</h3>
+            </div>
+          </div>
+        </nav>
       </div>
     </div>
   );
