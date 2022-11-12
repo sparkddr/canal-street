@@ -9,8 +9,62 @@ import picture2 from "../public/assets/section1-2.jpeg";
 import picture3 from "../public/assets/section1-3.jpeg";
 import mapPic from "../public/assets/map.avif";
 import Footer from "../components/Footer/Footer";
+import { gsap } from "gsap";
+import { useRef, useState, useEffect } from "react";
 
 export default function Home() {
+  const title = useRef(null);
+  const blueBar1 = useRef(null);
+  const blueContainer1 = useRef(null);
+  const redBar2 = useRef(null);
+  const redContainer2 = useRef(null);
+  const yellowBar3 = useRef(null);
+  const yellowContainer3 = useRef(null);
+  const [zInd, setZInd] = useState("");
+
+  useEffect(() => {
+    const TL = gsap.timeline();
+
+    TL.to(
+      yellowBar3.current,
+      { y: "0", duration: 1.3, ease: "power3.out", delay: 2 },
+      "-=1.1"
+    )
+      .to(
+        redBar2.current,
+        { y: "0", duration: 1.3, ease: "power3.out" },
+        "-=1.1"
+      )
+      .to(
+        blueBar1.current,
+        { y: "0", duration: 1.3, ease: "power3.out" },
+        "-=1.1"
+      )
+      .to(title.current, { opacity: 1, duration: 2 }, "-=0.95");
+  }, []);
+
+  function handleClicBlue() {
+    setZInd("z-20");
+    gsap.to(blueContainer1.current, {
+      width: "calc(100% - 180px)",
+      duration: 0.9,
+    });
+  }
+  function handleClicRed() {
+    setZInd("z-20");
+    gsap.to(redContainer2.current, {
+      width: "calc(100% - 180px)",
+      duration: 0.9,
+    });
+  }
+  function handleClicYellow() {
+    setZInd("z-20");
+    gsap.to(yellowContainer3.current, {
+      width: "calc(100% - 180px)",
+      duration: 0.9,
+    });
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -19,12 +73,16 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="flex">
-        <main>
+        <main className="z-10">
           <Link href="/" className="block pt-10 px-16 fixed">
             <Logo />
           </Link>
-          <section className="mx-16 py-36 max-w-[1030px]">
-            <h1 className="text-4xl md:text-7xl font-ogg md:leading-[5.5rem]">
+          <section className="mx-16 py-52 max-w-[1030px]">
+            <h1
+              ref={title}
+              className="text-4xl md:text-7xl font-ogg md:leading-[5.5rem] "
+              style={{ opacity: 0 }}
+            >
               Canal Street Market is a carefully curated retail market, food
               hall & community space open year-round at 265 Canal Street.{" "}
               <Link href="/" className={styles.yellowUnderline}>
@@ -141,24 +199,56 @@ export default function Home() {
           </section>
           <Footer />
         </main>
-
-        <nav className="hidden md:flex w-[180px] shrink-0 relative font-apercu ">
-          <div className="h-[100vh] w-[60px] relative ">
-            <div className="h-[100vh] w-[60px] bg-[#5EA2EC] fixed flex flex-col justify-center items-center cursor-pointer ">
-              <span className="text-xl absolute top-20">餐饮</span>
-              <h3 className="rotate-90 text-xl">Food</h3>
+        <div className="hidden md:flex w-[180px] shrink-0 relative font-apercu"></div>
+        <nav
+          className={
+            "hidden md:flex w-full shrink-0 fixed justify-end font-apercu " +
+            zInd
+          }
+        >
+          <div
+            ref={blueContainer1}
+            className="h-[100vh] w-[60px] relative flex justify-start  "
+            onClick={handleClicBlue}
+          >
+            <div
+              ref={blueBar1}
+              className="h-[100vh] w-full bg-[#5EA2EC]  items-center cursor-pointer -translate-y-full flex justify-start "
+            >
+              <div className="w-[60px] flex flex-col justify-center relative h-full items-center ">
+                <span className="text-xl absolute top-20">餐饮</span>
+                <h3 className="rotate-90 text-xl">Food</h3>
+              </div>
             </div>
           </div>
-          <div className="h-[100vh] w-[60px] relative ">
-            <div className="h-[100vh] w-[60px] bg-[#F64444] fixed flex flex-col justify-center items-center cursor-pointer">
-              <span className="text-xl absolute top-20">餐饮</span>
-              <h3 className="rotate-90 text-xl">Retail</h3>
+          <div
+            ref={redContainer2}
+            className="h-[100vh] w-[60px] relative flex justify-start  "
+            onClick={handleClicRed}
+          >
+            <div
+              ref={redBar2}
+              className="h-[100vh] w-full bg-[#F64444]  items-center cursor-pointer -translate-y-full flex justify-start "
+            >
+              <div className="w-[60px] flex flex-col justify-center relative h-full items-center ">
+                <span className="text-xl absolute top-20">餐饮</span>
+                <h3 className="rotate-90 text-xl">Retail</h3>
+              </div>
             </div>
           </div>
-          <div className="h-[100vh] w-[60px] relative ">
-            <div className="h-[100vh] w-[60px] bg-[#FFB300] fixed flex flex-col justify-center items-center cursor-pointer">
-              <span className="text-xl absolute top-20">餐饮</span>
-              <h3 className="rotate-90 text-xl">Community</h3>
+          <div
+            ref={yellowContainer3}
+            className="h-[100vh] w-[60px] relative flex justify-start  "
+            onClick={handleClicYellow}
+          >
+            <div
+              ref={yellowBar3}
+              className="h-[100vh] w-full bg-[#FFB300]  items-center cursor-pointer -translate-y-full flex justify-start "
+            >
+              <div className="w-[60px] flex flex-col justify-center relative h-full items-center ">
+                <span className="text-xl absolute top-20">餐饮</span>
+                <h3 className="rotate-90 text-xl">Community</h3>
+              </div>
             </div>
           </div>
         </nav>
