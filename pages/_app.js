@@ -1,13 +1,13 @@
 import "../styles/globals.css";
 import { useRouter } from "next/router";
 import PageTransitions from "../components/PageTransitions";
+import Layout from "../components/Layout";
 
 function MyApp({ Component, pageProps }) {
-  const router = useRouter();
   return (
-    <PageTransitions route={router.asPath}>
+    <Layout>
       <Component {...pageProps} />
-    </PageTransitions>
+    </Layout>
   );
 }
 
