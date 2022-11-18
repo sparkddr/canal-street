@@ -7,6 +7,7 @@ import { createContext } from "react";
 import { useContext } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { AnimatePresence } from "framer-motion";
 
 // export const TitleContext = createContext();
 // export const ContextProvider = ({ children }) => {
@@ -47,25 +48,23 @@ export default function Layout({ children }) {
       .to(title.current, { opacity: 1, duration: 2 }, "-=0.95");
   }, []);
 
-  async function handleClicBlue(e) {
-    e.preventDefault();
-    setZInd("z-20");
-    const TL = gsap.timeline();
-    const anim = await gsap.to(blueContainer1.current, {
-      width: "calc(100% - 180px)",
-      ease: "power3.out",
-      duration: 0.9,
-    });
-    router.push("/food");
-    gsap.to(blueContainer1.current, {
-      opacity: 0,
-      ease: "power3.out",
-      duration: 0.9,
-      delay: "2",
-    });
-    // blueContainer1.current.className =
-    //   blueContainer1.current.className + " hidden";
-  }
+  // async function handleClicBlue(e) {
+  //   e.preventDefault();
+  //   setZInd("z-20");
+  //   const TL = gsap.timeline();
+  //   const anim = await gsap.to(blueContainer1.current, {
+  //     width: "calc(100% - 180px)",
+  //     ease: "power3.out",
+  //     duration: 0.9,
+  //   });
+  //   router.push("/food");
+  //   gsap.to(blueContainer1.current, {
+  //     opacity: 0,
+  //     ease: "power3.out",
+  //     duration: 0.9,
+  //     delay: "2",
+  //   });
+  // }
   function handleClicRed() {
     const TL = gsap.timeline();
     setZInd("z-20");
@@ -107,7 +106,7 @@ export default function Layout({ children }) {
           href="/food"
           ref={blueContainer1}
           className="h-[100vh] w-[60px] relative flex justify-start  "
-          onClick={handleClicBlue}
+          // onClick={handleClicBlue}
         >
           <div
             ref={blueBar1}
@@ -150,10 +149,10 @@ export default function Layout({ children }) {
           </div>
         </div>
       </nav>
-      <div className="flex">
-        {/* {children} */}
+
+      <AnimatePresence exitBeforeEnter>
         {React.cloneElement(children, { ref: title })}
-      </div>
+      </AnimatePresence>
     </div>
   );
 }

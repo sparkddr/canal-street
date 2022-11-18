@@ -20,7 +20,7 @@ import React, {
 
 const Home = forwardRef(function Home(props, ref) {
   return (
-    <>
+    <div className="flex">
       <main className="z-10">
         <Link href="/" className="block pt-10 px-16 fixed">
           <Logo />
@@ -141,7 +141,7 @@ const Home = forwardRef(function Home(props, ref) {
         <Footer />
       </main>
       <div className="hidden md:flex w-[180px] shrink-0 relative font-apercu -z-10"></div>
-    </>
+    </div>
   );
 });
 
