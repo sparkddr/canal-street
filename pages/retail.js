@@ -18,9 +18,9 @@ const fadeIn = {
   initial: { opacity: 0 },
   animate: { opacity: 1, transition: { delay: 0.4 } },
 };
-function Food(props, ref) {
+function Retail(props, ref) {
   useEffect(() => {
-    props.setIsOn("blue");
+    props.setIsOn("red");
   }, []);
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -36,11 +36,11 @@ function Food(props, ref) {
       className="flex"
     >
       <div className="hidden md:flex w-[60px] shrink-0 relative font-apercu -z-10"></div>
-      <div className="hidden md:flex w-[60px] bg-[#5EA2EC] shrink-0 relative font-apercu -z-10"></div>
+      <div className="hidden md:flex w-[60px] bg-[#F64444] shrink-0 relative font-apercu -z-10"></div>
       <motion.main
         initial="initial"
         animate="animate"
-        className="z-10 bg-[#5EA2EC] w-full "
+        className="z-10 bg-[#F64444] w-full "
       >
         <Link href="/" scroll={false} className="block pt-10 px-16 fixed">
           <Logo />
@@ -67,4 +67,4 @@ function Food(props, ref) {
   );
 }
 
-export default Food;
+export default Retail;

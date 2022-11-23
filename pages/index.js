@@ -21,16 +21,19 @@ import { motion } from "framer-motion";
 
 export default function Home(props, ref) {
   useEffect(() => {
-    props.setIsOn(false);
+    props.setIsOn("white");
+  }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
   }, []);
   return (
     <motion.div
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      animate={{ opacity: 1, transition: { duration: 1, delay: 0.2 } }}
       exit={{ opacity: 0 }}
       className="flex"
     >
-      <main className="z-10">
+      <main className="z-10 ">
         <Link href="/" className="block pt-10 px-16 fixed">
           <Logo />
         </Link>
