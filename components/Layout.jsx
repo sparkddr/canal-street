@@ -7,7 +7,7 @@ import { createContext } from "react";
 import { useContext } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 // export const TitleContext = createContext();
 // export const ContextProvider = ({ children }) => {
@@ -25,7 +25,8 @@ export default function Layout({ children }) {
   const yellowBar3 = useRef(null);
   const yellowContainer3 = useRef(null);
   const [zInd, setZInd] = useState("");
-  const title = useRef(null);
+
+  const [isOn, setIsOn] = useState(false);
 
   useEffect(() => {
     const TL = gsap.timeline();
@@ -44,8 +45,8 @@ export default function Layout({ children }) {
         blueBar1.current,
         { y: "0", duration: 1.3, ease: "power3.out" },
         "-=1.1"
-      )
-      .to(title.current, { opacity: 1, duration: 2 }, "-=0.95");
+      );
+    // .to(title.current, { opacity: 1, duration: 2 }, "-=0.95");
   }, []);
 
   // async function handleClicBlue(e) {
@@ -102,22 +103,43 @@ export default function Layout({ children }) {
           "hidden md:flex w-full shrink-0 fixed justify-end font-apercu " + zInd
         }
       >
-        <Link
-          href="/food"
-          ref={blueContainer1}
-          className="h-[100vh] w-[60px] relative flex justify-start  "
-          // onClick={handleClicBlue}
+        <motion.div
+          layout
+          // data-isOn={isOn}
+          // className="nav-container"
+          style={{
+            width: isOn ? "calc(100vw - 180px)" : "60px",
+
+            // originX: isOn ? "calc(100vw - 180px) *-1" : "0px",
+            height: "100vh",
+            // transitionDuration: "620ms",
+          }}
+          onClick={() => {
+            setIsOn(!isOn);
+          }}
         >
-          <div
-            ref={blueBar1}
-            className="h-[100vh] w-full bg-[#5EA2EC]  items-center cursor-pointer -translate-y-full flex justify-start "
+          <Link
+            href="/food"
+            ref={blueContainer1}
+            className="h-full w-full relative flex justify-start  "
+            // onClick={handleClicBlue}
           >
-            <div className="w-[60px] flex flex-col justify-center relative h-full items-center ">
-              <span className="text-xl absolute top-20">餐饮</span>
-              <h3 className="rotate-90 text-xl">Food</h3>
+            <div
+              ref={blueBar1}
+              className="h-[100vh] min-w-[100vw] bg-[#5EA2EC]  items-center cursor-pointer -translate-y-full flex justify-start "
+            >
+              <div
+                className={
+                  "w-[60px] grow-0 flex flex-col justify-center relative h-full items-center " +
+                  (isOn && "opacity-0")
+                }
+              >
+                <span className="text-xl absolute top-20">餐饮</span>
+                <h3 className="rotate-90 text-xl">Food</h3>
+              </div>
             </div>
-          </div>
-        </Link>
+          </Link>
+        </motion.div>
         <div
           ref={redContainer2}
           className="h-[100vh] w-[60px] relative flex justify-start  "
@@ -151,7 +173,8 @@ export default function Layout({ children }) {
       </nav>
 
       <AnimatePresence exitBeforeEnter>
-        {React.cloneElement(children, { ref: title })}
+        {React.cloneElement(children, { isOn, setIsOn })}
+        {/* {children} */}
       </AnimatePresence>
     </div>
   );

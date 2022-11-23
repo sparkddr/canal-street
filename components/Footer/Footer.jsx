@@ -14,7 +14,7 @@ export default function Footer() {
           Interested in becoming a vendor?
         </h2>
         <div className="w-full flex justify-center">
-          <button className="font-apercu border md:mx-auto bg-white  border-black w-full mt-12 py-4 text-sm md:text-base md:w-auto px-20 hover:text-white hover:bg-black transition-all duration-300">
+          <button className="font-apercu border md:mx-auto bg-inherit  border-black w-full mt-12 py-4 text-sm md:text-base md:w-auto px-20 hover:text-white hover:bg-black transition-all duration-300">
             click here
           </button>
         </div>
@@ -72,7 +72,7 @@ export default function Footer() {
           <input
             type="text"
             placeholder="Email "
-            className="border border-black  w-full px-7 py-4 after:content[\21E3]"
+            className="border border-black  w-full px-7 py-4 after:content[\21E3] bg-inherit placeholder:text-black"
           />
 
           <span className="absolute text-3xl right-6 top-3">⇢</span>
