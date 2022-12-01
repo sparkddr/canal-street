@@ -33,18 +33,15 @@ function Retail(props, ref) {
         transition: { duration: 1.2, ease: "easeInOut", delay: 0.3 },
       }}
       exit={{ opacity: 0 }}
-      className="flex"
+      className="flex w-full"
     >
       <div className="hidden md:flex w-[60px] shrink-0 relative font-apercu -z-10"></div>
-      <div className="hidden md:flex w-[60px] bg-[#F64444] shrink-0 relative font-apercu -z-10"></div>
+      <div className="hidden md:flex w-[60px] shrink-0 relative font-apercu -z-10"></div>
       <motion.main
         initial="initial"
         animate="animate"
         className="z-10 bg-[#F64444] w-full "
       >
-        <Link href="/" scroll={false} className="block pt-10 px-16 fixed">
-          <Logo />
-        </Link>
         <section className="mx-16 pt-60 flex ">
           <motion.h1
             ref={ref}
@@ -62,7 +59,7 @@ function Retail(props, ref) {
         <Footer />
       </motion.main>
 
-      <div className="hidden md:flex w-[120px] shrink-0 relative font-apercu -z-10"></div>
+      <div className="hidden md:flex w-[60px] shrink-0 relative font-apercu -z-10"></div>
     </motion.div>
   );
 }

@@ -18,9 +18,9 @@ const fadeIn = {
   initial: { opacity: 0 },
   animate: { opacity: 1, transition: { delay: 0.4 } },
 };
-function Food(props, ref) {
+function Community(props, ref) {
   useEffect(() => {
-    props.setIsOn("blue");
+    props.setIsOn("yellow");
   }, []);
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -36,11 +36,13 @@ function Food(props, ref) {
       className="flex"
     >
       <div className="hidden md:flex w-[60px] shrink-0 relative font-apercu -z-10"></div>
-      <div className="hidden md:flex w-[60px] bg-[#5EA2EC] shrink-0 relative font-apercu -z-10"></div>
+      <div className="hidden md:flex w-[60px]  shrink-0 relative font-apercu -z-10"></div>
+      <div className="hidden md:flex w-[60px]  shrink-0 relative font-apercu -z-10"></div>
+      <div className="hidden md:flex w-[60px]  shrink-0 relative font-apercu -z-10"></div>
       <motion.main
         initial="initial"
         animate="animate"
-        className="z-10 bg-[#5EA2EC] w-full grow "
+        className="z-10 bg-[#FFB300] w-full grow "
       >
         <section className="mx-16 pt-60 flex ">
           <motion.h1
@@ -58,10 +60,8 @@ function Food(props, ref) {
         </div> */}
         <Footer />
       </motion.main>
-
-      <div className="hidden md:block w-[120px] shrink-0 relative font-apercu -z-10"></div>
     </motion.div>
   );
 }
 
-export default Food;
+export default Community;

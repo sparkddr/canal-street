@@ -34,9 +34,6 @@ export default function Home(props, ref) {
       className="flex"
     >
       <main className="z-10 ">
-        <Link href="/" className="block pt-10 px-16 fixed">
-          <Logo />
-        </Link>
         <section className="mx-16 py-52 max-w-[1030px]">
           <h1
             // ref={ref}
