@@ -42,12 +42,12 @@ function Retail(props, ref) {
         animate="animate"
         className="z-10 bg-[#F64444] w-full "
       >
-        <section className="mx-16 pt-60 flex ">
+        <section className="mx-16 pt-60 flex">
           <motion.h1
             ref={ref}
-            className="text-4xl md:text-[200px] font-ogg md:leading-[11.5rem] w-[1030px] "
+            className="text-4xl lg:text-[200px] font-ogg md:leading-[11.5rem] "
           >
-            The Food Hall
+            The Retail Market
           </motion.h1>
           <motion.div variants={fadeIn}>
             <Image alt="Canal Street room" src={picture3} className="w-96" />

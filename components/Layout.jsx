@@ -143,7 +143,7 @@ export default function Layout({ children }) {
             >
               <div
                 className={
-                  "w-[60px] grow-0 flex flex-col justify-center relative h-full items-center " +
+                  "w-[60px] grow-0 flex flex-col justify-center relative h-full items-center transition-all duration-500 " +
                   (isOn !== "blue" ? "opacity-1" : "opacity-0")
                 }
               >
@@ -173,7 +173,7 @@ export default function Layout({ children }) {
             >
               <div
                 className={
-                  "w-[60px] flex flex-col justify-center relative h-full items-center " +
+                  "w-[60px] flex flex-col justify-center relative h-full items-center transition-all duration-500 " +
                   (isOn !== "red" ? "opacity-1" : "opacity-0")
                 }
               >

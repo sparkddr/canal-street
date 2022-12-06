@@ -49,7 +49,7 @@ function Community(props, ref) {
             ref={ref}
             className="text-4xl lg:text-[200px] font-ogg md:leading-[11.5rem]  "
           >
-            The Food Hall
+            Canal St. Community
           </motion.h1>
           <motion.div variants={fadeIn}>
             <Image alt="Canal Street room" src={picture3} className="w-96" />
