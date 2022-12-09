@@ -177,7 +177,7 @@ export default function Layout({ children }) {
                   (isOn !== "red" ? "opacity-1" : "opacity-0")
                 }
               >
-                <span className="text-xl absolute top-20">餐饮</span>
+                <span className="text-xl absolute top-20">購物</span>
                 <h3 className="rotate-90 text-xl">Retail</h3>
               </div>
             </div>
