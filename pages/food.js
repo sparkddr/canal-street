@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Smiley from "../components/icons/Smiley";
-import styles from "../styles/Home.module.css";
+import styles from "../styles/Food.module.css";
 import Logo from "../components/logo";
 import Link from "next/link";
 import background from "../public/assets/background.avif";
@@ -24,7 +24,7 @@ function Food(props, ref) {
     props.setIsOn("blue");
   }, []);
   useEffect(() => {
-    // window.scrollTo(0, 0);
+    window.scrollTo(0, 0);
   }, []);
   return (
     <motion.div
@@ -43,31 +43,39 @@ function Food(props, ref) {
         animate="animate"
         className="z-10 bg-[#5EA2EC] w-full grow "
       >
-        <div className="w-full flex justify-end font-apercu text-sm pt-40 px-20">
+        <div className="w-full flex justify-end font-apercu text-sm pt-32 px-10">
           <div className="text-right">
             <h3>Food Hall Hours : </h3>
             <span>Mon - Sun: 11:00AM - 8:00PM</span>
           </div>
         </div>
-        <section className="mx-12 pt-20 flex ">
-          <motion.h1
-            ref={ref}
-            className="text-4xl lg:text-[200px] font-ogg md:leading-[11.5rem]  "
+        <section className="px-10 md:px-0 pt-20 flex flex-col md:flex-row gap-6 md:gap-0 ">
+          <div className="lg:w-[60%] xl:w-[70%] flex flex-col justify-center lg:block relative">
+            <div className="hidden md:block -translate-y-10 rotate-90 absolute text-gray-700 -top-4">
+              <h3 className="font-apercu ">Food ⇢</h3>
+            </div>
+            <motion.h1
+              ref={ref}
+              className="text-[80px] lg:text-[150px] xl:text-[200px]  font-ogg  leading-[5rem] lg:leading-[11.5rem]  "
+            >
+              The Food Hall
+            </motion.h1>
+          </div>
+          <motion.div
+            variants={fadeIn}
+            className="relative shrink w-full md:w-[50%] lg:w-[30%] "
           >
-            The Food Hall
-          </motion.h1>
-          <motion.div variants={fadeIn} className="relative">
-            <span className="absolute z-20 text-6xl -right-3 -top-10">
+            <span className="absolute z-20 text-6xl -right-3 md:-top-10 -bottom-10">
               餐饮
             </span>
             <Image
               alt="Canal Street room"
               src={picture3}
-              className="w-[450px] relative -left-16"
+              className=" w-full md:min-w-[100%] lg:min-w-[140%] xl:min-w-[100%] relative "
             />
           </motion.div>
         </section>
-        <section className="grid grid-cols-3 pt-20 px-10 w-full gap-20">
+        <section className="grid md:grid-cols-3 pt-20 px-10 w-full gap-20">
           <div>
             <h3 className="font-apercu">Khao Man Gai</h3>
             <h2 className="font-ogg text-3xl mt-6">Betong</h2>
@@ -113,12 +121,13 @@ function Food(props, ref) {
             <h2 className="font-ogg text-3xl mt-6">Mucho Sarap</h2>
           </div>
         </section>
-        <section className="flex justify-around mt-20">
-          <div className="flex justify-center items-center">
-            <Smiley className="w-52 h-52 animate-smiley" />
+        {/* <section className="flex justify-around mt-20"> */}
+        <section className={styles.happyhour + " grid md:grid-cols-3"}>
+          <div className="flex  justify-center items-center">
+            <Smiley className="w-28 h-28 md:w-36 md:h-36 lg:w-52 lg:h-52 animate-smiley" />
           </div>
           <div>
-            <h2 className="text-[150px] leading-[9rem]  font-ogg text-center">
+            <h2 className="text-[100px] lg:text-[150px] leading-[9rem]  font-ogg text-center">
               {" "}
               Happy <br />
               Hour
@@ -130,7 +139,7 @@ function Food(props, ref) {
             </div>
           </div>
           <div className="flex justify-center items-center">
-            <Smiley className="w-52 h-52 animate-smileyreverse " />
+            <Smiley className="w-28 h-28 md:w-36 md:h-36 lg:w-52 lg:h-52 animate-smileyreverse " />
           </div>
         </section>
         {/* <div>
@@ -139,7 +148,7 @@ function Food(props, ref) {
         <Footer />
       </motion.main>
 
-      <div className="hidden md:block w-[120px] shrink-0 relative font-apercu -z-10"></div>
+      <div className="hidden md:block w-[180px] shrink-0 relative font-apercu -z-10"></div>
     </motion.div>
   );
 }
