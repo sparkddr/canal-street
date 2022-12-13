@@ -1,11 +1,10 @@
 import React from "react";
 import { gsap } from "gsap";
 import { useRef, useState, useEffect } from "react";
-import styles from "../styles/Home.module.css";
+
 import Head from "next/head";
-import Logo from "./logo";
-import { createContext } from "react";
-import { useContext } from "react";
+import Logo from "./Logo";
+
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { AnimatePresence, motion } from "framer-motion";

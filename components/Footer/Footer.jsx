@@ -1,6 +1,6 @@
 import styles from "./Footer.module.css";
 import stylesMain from "../../styles/Home.module.css";
-import Pen from "../icons/pen";
+import Pen from "../icons/Pen";
 import Facebook from "../icons/Facebook";
 import Instagram from "../icons/Instagram";
 import Letter from "../icons/Letter";

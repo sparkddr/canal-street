@@ -1,7 +1,6 @@
-import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import Logo from "../components/logo";
+
 import Link from "next/link";
 import background from "../public/assets/background.avif";
 import picture1 from "../public/assets/section1-1.jpeg";
@@ -9,14 +8,8 @@ import picture2 from "../public/assets/section1-2.jpeg";
 import picture3 from "../public/assets/section1-3.jpeg";
 import mapPic from "../public/assets/map.avif";
 import Footer from "../components/Footer/Footer";
-import { gsap } from "gsap";
-import React, {
-  useRef,
-  useState,
-  useEffect,
-  useContext,
-  forwardRef,
-} from "react";
+
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 
 export default function Home(props, ref) {

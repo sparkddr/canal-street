@@ -1,18 +1,9 @@
-import Head from "next/head";
 import Image from "next/image";
 import Smiley from "../components/icons/Smiley";
 import styles from "../styles/Food.module.css";
-import Logo from "../components/logo";
-import Link from "next/link";
-import background from "../public/assets/background.avif";
-import picture1 from "../public/assets/section1-1.jpeg";
-import picture2 from "../public/assets/section1-2.jpeg";
 import picture3 from "../public/assets/section1-3.jpeg";
-import mapPic from "../public/assets/map.avif";
 import Footer from "../components/Footer/Footer";
-import { gsap } from "gsap";
-import { useRef, useState, useEffect } from "react";
-import { forwardRef } from "react";
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 
 const fadeIn = {
