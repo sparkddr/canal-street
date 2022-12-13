@@ -37,3 +37,12 @@ a {
     background: black;
   }
 }
+
+.nav-container {
+  height: 100vh;
+  width: 60px;
+}
+
+.nav-container[data-isOn="true"] {
+  width: calc(100vw - 180px);
+}

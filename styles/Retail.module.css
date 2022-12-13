@@ -1,0 +1,54 @@
+.happyhour {
+  padding: 110px 0;
+  margin: 120px 0px;
+  background-image: repeating-linear-gradient(
+      -45deg,
+      #000,
+      #000 1px,
+      transparent 0,
+      transparent 70px
+    ),
+    repeating-linear-gradient(
+      45deg,
+      #000,
+      #000 1px,
+      transparent 0,
+      transparent 70px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      #000,
+      #000 1px,
+      transparent 0,
+      transparent 70px
+    ),
+    repeating-linear-gradient(
+      45deg,
+      #000,
+      #000 1px,
+      transparent 0,
+      transparent 70px
+    );
+  background-position: 0 100%, 100%, 0 0, 0 0;
+  background-size: 91.5px 53px, 91.5px 54px, 100px 50px, 100px 50px;
+  background-repeat: repeat-x;
+  animation: 2s infinite normal e;
+  animation-timing-function: linear;
+  display: -ms-grid;
+  display: grid;
+  /* -ms-grid-columns: (1fr);
+  grid-template-columns: repeat(3, 1fr); */
+  /* grid-column-gap: 60px; */
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+@keyframes e {
+  0% {
+    background-position: 0 101%, 0 101%, 0 0, 0 0;
+  }
+
+  100% {
+    background-position: 93px 101%, 93px 101%, 100px 0, 100px 0;
+  }
+}
