@@ -4,6 +4,7 @@ import { useRef, useState, useEffect } from "react";
 
 import Head from "next/head";
 import Logo from "./Logo";
+import { HiMenu } from "react-icons/hi";
 
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -21,6 +22,7 @@ export default function Layout({ children }) {
   const yellowContainer3 = useRef(null);
   const [zInd, setZInd] = useState("");
   const [isOn, setIsOn] = useState("white");
+  const [openNav, setOpenNav] = useState(false);
   const [path, setPath] = useState(router.pathname);
 
   const variants = {
@@ -85,6 +87,70 @@ export default function Layout({ children }) {
       >
         <Logo />
       </Link>
+      <div
+        className="fixed right-12 top-9 md:hidden cursor-pointer z-20"
+        onClick={() => {
+          setOpenNav(!openNav);
+        }}
+      >
+        <HiMenu className="h-10 w-10" />
+      </div>
+      {openNav && (
+        <nav className="absolute md:hidden w-full  z-50 bg-white  ">
+          <div className="grid grid-cols-2 w-full">
+            <Link
+              href="/"
+              className="w-full h-[45vh] bg-white flex justify-center items-center"
+            >
+              <span className="font-apercu text-xl -rotate-45">Home</span>
+            </Link>
+            <Link
+              href="/food"
+              className="w-full h-[45vh] bg-[#5EA2EC] flex justify-center items-center"
+            >
+              <span className="font-apercu text-xl rotate-45">Food</span>
+            </Link>
+            <Link
+              href="/retail"
+              className="w-full h-[45vh] bg-[#F64444] flex justify-center items-center "
+            >
+              <span className="font-apercu text-xl rotate-45 ">Retail</span>
+            </Link>
+            <Link
+              href="/community"
+              className="w-full h-[45vh] bg-[#FFB300] flex justify-center items-center"
+            >
+              <span className="font-apercu text-xl -rotate-45">Community</span>
+            </Link>
+          </div>
+          <div className="w-full px-12 font-apercu flex flex-col gap-6 ">
+            <button className="font-apercu border  bg-inherit  border-black w-full mt-12 py-4  md:w-auto px-20 hover:text-white hover:bg-black transition-all duration-300">
+              Become a vendor
+            </button>
+            <div>
+              <h3>265 Canal Street</h3>
+              <span>New York, New York</span>
+            </div>
+            <div>
+              <h3>Food Hall Hours : </h3>
+              <span>Mon – Sun: 10AM- 10PM</span>
+            </div>
+            <div>
+              <h3>Retail Market Hours</h3>
+              <span>Mon – Sat: 11AM- 7PM</span>
+            </div>
+            <span className="underline">Email us</span>
+            <div className="grid grid-cols-2 gap-4">
+              <button className="font-apercu border md:mx-auto bg-inherit  border-black w-full  py-4 text-sm md:text-base md:w-auto px-20 hover:text-white hover:bg-black transition-all duration-300">
+                Facebook
+              </button>
+              <button className="font-apercu border md:mx-auto bg-inherit  border-black w-full  py-4 text-sm md:text-base md:w-auto px-20 hover:text-white hover:bg-black transition-all duration-300">
+                Instagram
+              </button>
+            </div>
+          </div>
+        </nav>
+      )}
       <nav
         className={
           "hidden md:flex w-[100vw]  fixed justify-end font-apercu" + zInd
