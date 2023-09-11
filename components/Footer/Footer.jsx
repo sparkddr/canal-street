@@ -10,11 +10,11 @@ export default function Footer() {
   return (
     <footer className="mt-16 px-16">
       <div className={styles.vendorSection}>
-        <h2 className="text-center text-6xl font-ogg">
+        <h2 className="text-center  text-4xl sm:text-5xl md:text-6xl font-ogg">
           Interested in becoming a vendor?
         </h2>
         <div className="w-full flex justify-center">
-          <button className="font-apercu border md:mx-auto bg-inherit  border-black w-full mt-12 py-4 text-sm md:text-base md:w-auto px-20 hover:text-white hover:bg-black transition-all duration-300">
+          <button className="font-apercu border md:mx-auto bg-inherit flex justify-center border-black w-full mt-12 py-4 text-sm md:text-base md:w-auto px-20 hover:text-white hover:bg-black transition-all duration-300">
             click here
           </button>
         </div>
